@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+
+<div th:each="user : ${users}">
+    <a th:href="@{/admin/{id}(id=${user.getId()})}"
+       th:text="${user.getName() + ',' + user.getAge() }">person</a>
+</div>
+
+<br/>
+<hr/>
+<a href = "/admin/newUser">Click here for create a new User</a>
+<hr/>
+<a th:href="@{/logout}">Logout</a>
+</body>
+</html>
