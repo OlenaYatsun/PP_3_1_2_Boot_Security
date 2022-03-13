@@ -41,24 +41,4 @@ public class RoleDAOImpl implements RoleDAO {
         List<Role> list1 = entityManager.createQuery("select role from Role role", Role.class).getResultList();
         return list1;
     }
-
-   /* @Override
-    public Role getRoleByName(String roleName) {
-        return (Role) entityManager.createQuery("select from Role role where role.name=:role")
-                .setParameter("role", roleName)
-                .getSingleResult();
-    }
-
-    @Override
-    public Set<Role> setRoleByName(String name, String[] rolesName) {
-        Set<Role> roleSet = new HashSet<Role>();
-        if (rolesName != null) {
-            for (String roleName : rolesName) {
-                roleSet.add(getRoleByName(roleName));
-            }
-        }
-        return roleSet;
-    }
-
-    */
 }

@@ -63,28 +63,25 @@ public class AdminController {
         return "redirect:/admin/allUsers";
     }
 
+
+   /* @RequestMapping(value = { "/admin" }, method = RequestMethod.POST)
+    public String create( @ModelAttribute("user") User user) {
+        userService.saveUser(user);
+        return "redirect:/admin/allUsers";
+    }
+
+    */
+
     @PatchMapping("/admin/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") long id) {
         userService.update(id, user);
         return "redirect:/admin/allUsers";
     }
 
-    
+
     @DeleteMapping("admin/{id}")
     public String delete(@PathVariable("id") Long id) {
         userService.delete(id);
         return "redirect:/admin/allUsers";
     }
-
-
-
-   /* @GetMapping("/admin")
-    public String pageRedirect(Principal principal) {
-        return "redirect:/admin";
-    }
-
-    */
-
-
-
 }

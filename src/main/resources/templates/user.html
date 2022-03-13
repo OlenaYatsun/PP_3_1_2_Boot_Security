@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>My Profile</title>
+    <meta charset="UTF-8">
+    <title>User</title>
 </head>
 <body>
-<table class="table-dark">
-    <thead>
-    <tr class="table-dark">
-        <th scope="col">Имя</th>
-        <th scope="col">Возраст</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td th:text="${user.getName()}"/>
-        <td th:text="${user.getAge()}"/>
-    </tr>
-    </tbody>
-</table>
+
+
+<p th:text="${user.getId()}">VALUE</p>
+<p th:text="${user.getName()}">VALUE</p>
+<p th:text="${user.getAge()}">VALUE</p>
+<p th:text="${user.getUsername()}">VALUE</p>
+
 <br/>
 <br/>
-<hr/>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign out"/>
-</form>
+
 </body>
-</html>>
+</html>

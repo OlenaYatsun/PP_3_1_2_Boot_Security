@@ -31,11 +31,12 @@ public class DBInit implements CommandLineRunner {
         roleService.save(role1);
         roleService.save(role2);
 
-        List<Role> u1roles = new ArrayList<>();
-        u1roles.add(role2);
-        u1roles.add(role1);
-        User user1 = new User("admin", "Olga", 29, "admin",u1roles);
-        User user2 = new User("user", "Ivan", 35, "user", u1roles);
+        List<Role> roleAdmin = new ArrayList<>();
+        List<Role> roleUser = new ArrayList<>();
+        roleAdmin.add(role1);
+        roleUser.add(role2);
+        User user1 = new User("admin", "Oleg", 29, "admin",roleAdmin);
+        User user2 = new User("user", "Ivan", 35, "user", roleUser);
 
         userService.saveUser(user1);
         userService.saveUser(user2);

@@ -12,13 +12,9 @@ public interface UserDAO {
 
     void saveUser(User user);
 
-    //void update( User updatedUser);
-
     void update(long id, User updatedUser);
 
     void delete(Long id);
-
-    //User getUserByName(String username);
 
     User findByUsername(String username);
 

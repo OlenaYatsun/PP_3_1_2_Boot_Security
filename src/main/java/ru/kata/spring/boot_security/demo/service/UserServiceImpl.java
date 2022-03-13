@@ -44,23 +44,12 @@ public class UserServiceImpl implements UserService {
         userDAO.saveUser(user);
     }
 
-    /*@Override
-    @Transactional
-    public void update(User updatedUser) {
-        setEncryptedPassword(updatedUser);
-        userDAO.update(updatedUser);
-    }
-
-     */
-
 
     @Transactional
     @Override
     public void update(long id, User updatedUser) {
         userDAO.update(id, updatedUser);
     }
-
-
 
 
     @Override
