@@ -21,7 +21,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         this.userDAO = userDAO;
     }
 
-
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {

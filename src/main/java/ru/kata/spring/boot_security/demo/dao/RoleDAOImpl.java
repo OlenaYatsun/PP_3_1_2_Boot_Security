@@ -7,12 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+import static org.hibernate.FetchMode.JOIN;
+import static org.hibernate.hql.internal.antlr.HqlTokenTypes.FETCH;
+
 @Repository
 public class RoleDAOImpl implements RoleDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
-
 
     @Override
     public Role getRoleById(int id) {
@@ -38,7 +40,6 @@ public class RoleDAOImpl implements RoleDAO {
 
     @Override
     public List<Role> getDemandedRoles() {
-        List<Role> list1 = entityManager.createQuery("select role from Role role", Role.class).getResultList();
-        return list1;
+        return entityManager.createQuery("select r from Role r",  Role.class).getResultList();
     }
 }
