@@ -20,8 +20,8 @@ public class User implements UserDetails {
     private String name;
     @Column(name="age")
     private int age;
-    @Column(name = "username", unique = true)
-    private String username;
+    @Column(name = "email", unique = true)
+    private String email;
     @Column(name = "password")
     private String password;
 
@@ -33,8 +33,9 @@ public class User implements UserDetails {
     private List<Role> roles;
 
 
-    public User(String username, String name, int age, String password, List<Role> roles) {
-        this.username = username;
+
+    public User(String email, String name, int age, String password, List<Role> roles) {
+        this.email = email;
         this.name = name;
         this.age = age;
         this.password = password;
@@ -65,6 +66,14 @@ public class User implements UserDetails {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Collection<Role> getRoles() {
@@ -102,7 +111,7 @@ public class User implements UserDetails {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
+                ", username='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", roles=" + roles +
                 '}';

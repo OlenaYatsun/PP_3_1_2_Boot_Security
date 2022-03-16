@@ -35,8 +35,8 @@ public class DBInit implements CommandLineRunner {
         List<Role> roleUser = new ArrayList<>();
         roleAdmin.add(role1);
         roleUser.add(role2);
-        User user1 = new User("admin", "Oleg", 29, "admin",roleAdmin);
-        User user2 = new User("user", "Ivan", 35, "user", roleUser);
+        User user1 = new User("Oleg29@mail.ru", "Oleg", 29, "admin",roleAdmin);
+        User user2 = new User("Ivan35@mail.ru", "Ivan", 35, "user", roleUser);
 
         userService.saveUser(user1);
         userService.saveUser(user2);
